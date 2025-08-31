@@ -2,9 +2,9 @@ function parseNumber(text) {
   // "350.000 €" → 350000
   return parseFloat(
     text
-      .replace(/\./g, "")
-      .replace(",", ".")
-      .replace(/[^\d.]/g, "")
+      .replace(/\./g, "") // Tausenderpunkte entfernen
+      .replace(",", ".") // Kommas durch Punkte ersetzen
+      .match(/\d+(\.\d+)?/) // erste Zahl finden
   );
 }
 
