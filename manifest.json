@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Immobilien Quadratmeterpreis Rechner",
+  "version": "1.0",
+  "description": "Berechnet automatisch den Preis pro Quadratmeter für Immobilienangebote.",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.immobilienscout24.de/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
