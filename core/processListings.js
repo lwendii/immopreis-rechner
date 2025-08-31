@@ -8,7 +8,7 @@ function parseNumber(text) {
   );
 }
 
-export function processListings(parser) {
+export function processListings(parser, thresholdsData) {
   function addQmPrices() {
     const listings = parser.getListings();
     listings.forEach((listing) => {
@@ -20,12 +20,22 @@ export function processListings(parser) {
       const pricePerSqm = data.price / data.area;
       const priceFormatted = `${pricePerSqm.toFixed(2)} €/m²`;
 
+      const thresholds = thresholdsData?.priceThresholds?.length
+        ? thresholdsData.priceThresholds
+        : [
+            { max: 8, color: "#007f00" },
+            { max: 10, color: "#ffcc00" },
+            { max: 100000, color: "#ff0000" },
+          ];
+
       const qmElement = document.createElement("div");
       qmElement.className = "qm-preis-tag";
       qmElement.textContent = priceFormatted;
-      qmElement.style.color = "#007F00";
       qmElement.style.fontWeight = "bold";
       qmElement.style.marginTop = "4px";
+
+      const threshold = thresholds.find((t) => pricePerSqm <= t.max);
+      qmElement.style.color = threshold?.color || "#000";
 
       const newLine = document.createElement("div");
       newLine.style.marginTop = "4px";

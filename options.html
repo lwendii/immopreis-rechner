@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Preisfarben konfigurieren</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      .row {
+        margin-bottom: 8px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      input[type="number"] {
+        width: 80px;
+      }
+      input[type="color"] {
+        width: 40px;
+        height: 30px;
+        padding: 0;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Preisbereiche (&#8364;/m²) konfigurieren</h2>
+
+    <div id="thresholds"></div>
+
+    <button id="add">+ Bereich hinzufügen</button>
+    <button id="save">Speichern</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>

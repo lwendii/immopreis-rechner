@@ -10,7 +10,13 @@ import { processListings } from "./core/processListings.js";
   );
 
   if (parserKey) {
-    processListings(parsers[parserKey]);
+    if (chrome?.storage?.sync) {
+      chrome.storage.sync.get("priceThresholds", (data) => {
+        processListings(parsers[parserKey], data);
+      });
+    } else {
+      console.log("chrome.storage.sync nicht verfügbar");
+    }
   } else {
     console.log("Keine unterstützte Plattform:", host);
   }

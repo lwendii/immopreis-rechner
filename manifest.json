@@ -3,7 +3,7 @@
   "name": "Immobilien Quadratmeterpreis Rechner",
   "version": "1.0",
   "description": "Berechnet automatisch den Preis pro Quadratmeter für Immobilienangebote.",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "storage"],
   "content_scripts": [
     {
       "matches": [
@@ -16,6 +16,7 @@
       "type": "module"
     }
   ],
+  "options_page": "options.html",
   "icons": {
     "48": "icon.png"
   }
