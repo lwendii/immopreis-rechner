@@ -18,14 +18,20 @@ export function processListings(parser) {
       if (!data || !data.price || !data.area || !data.target) return;
 
       const pricePerSqm = data.price / data.area;
-      const tag = document.createElement("div");
-      tag.className = "qm-preis-tag";
-      tag.textContent = `${pricePerSqm.toFixed(2)} €/m²`;
-      tag.style.color = "#007F00";
-      tag.style.fontWeight = "bold";
-      tag.style.marginTop = "4px";
+      const priceFormatted = `${pricePerSqm.toFixed(2)} €/m²`;
 
-      data.target.appendChild(tag);
+      const qmElement = document.createElement("div");
+      qmElement.className = "qm-preis-tag";
+      qmElement.textContent = priceFormatted;
+      qmElement.style.color = "#007F00";
+      qmElement.style.fontWeight = "bold";
+      qmElement.style.marginTop = "4px";
+
+      const newLine = document.createElement("div");
+      newLine.style.marginTop = "4px";
+      newLine.appendChild(qmElement);
+
+      data.target.appendChild(newLine);
     });
   }
 
