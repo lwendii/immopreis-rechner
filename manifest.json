@@ -6,9 +6,14 @@
   "permissions": ["activeTab", "scripting"],
   "content_scripts": [
     {
-      "matches": ["*://*.immobilienscout24.de/*"],
-      "js": ["content.js"],
-      "css": ["content.css"]
+      "matches": [
+        "*://*.immobilienscout24.de/*",
+        "*://*.immowelt.de/*",
+        "*://*.immonet.de/*"
+      ],
+      "js": ["dist/content.js"],
+      "css": ["content.css"],
+      "type": "module"
     }
   ],
   "icons": {
