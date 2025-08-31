@@ -1,13 +1,81 @@
-# Immobilien Quadratmeterpreis Rechner – Chrome-Erweiterung
+# Immobilien Quadratmeterpreis Berechnung – Chrome Extension
 
-Diese Chrome-Erweiterung berechnet automatisch den **Preis pro Quadratmeter** für Immobilienangebote auf Webseiten wie z. B. ImmobilienScout24 und zeigt ihn direkt bei jedem Angebot an.
+Diese Chrome Extension berechnet den **Preis pro Quadratmeter** (€/m²) auf Immobilien-Webseiten und zeigt ihn direkt an. Zusätzlich können Benutzer dynamisch Preisgrenzen (mit Farben) über die **Options-Seite** der Extension anpassen.
 
-## 🔍 Funktionen
+## 🚀 Features
 
-- Automatische Berechnung des Quadratmeterpreises pro Inserat
-- Anzeige direkt unter dem Preis/Wohnfläche
-- Zwei Nachkommastellen im Quadratmeterpreis
-- Einfache Installation über den Entwicklermodus von Chrome
+- **Berechnung des Quadratmeterpreises (€/m²)** für Immobilienanzeigen
+- **Dynamische Konfiguration** der Preisgrenzen und Farben
+
+  - Schwellenwerte können durch den Benutzer geändert werden (z. B. `8 €/m² = grün`, `10 €/m² = gelb`)
+  - Die Farben werden für den Preisbereich angepasst
+
+- Anpassung erfolgt über eine **Options-Seite**, die jederzeit geändert werden kann
+- **Speichern der Einstellungen** durch `chrome.storage.sync`, damit sie über Browser-Sessions hinweg erhalten bleiben
+
+## 🔧 Installation
+
+1. Klone das Repository oder lade es herunter:
+
+   ```bash
+   git clone https://github.com/lwendii/immopreis-rechner.git
+   ```
+
+2. Gehe zu `chrome://extensions/` in deinem Chrome-Browser.
+
+3. Aktiviere den **Entwicklermodus** (rechts oben auf der Seite).
+
+4. Klicke auf **"Entpackte Erweiterung laden"**.
+
+5. Wähle den Ordner aus, der die Extension-Dateien enthält (`immopreis-rechner`).
+
+6. Die Extension ist jetzt aktiv und sollte auf unterstützten Webseiten den Quadratmeterpreis berechnen und anzeigen!
+
+## ⚙️ Optionen konfigurieren
+
+1. Klicke auf das Extension-Icon in der Browser-Leiste.
+
+2. Wähle die Option **"Optionen"**, um zur Konfigurationsseite zu gelangen.
+
+3. Auf der Options-Seite kannst du folgende Werte anpassen:
+
+   - **Preisgrenzen (€/m²)**: Definiere, bis zu welchem Quadratmeterpreis die Farbe grün, gelb, etc. verwendet wird.
+   - **Farben**: Setze die Farben für die jeweiligen Schwellenwerte.
+
+4. Deine Änderungen werden automatisch gespeichert und wirken sich auf alle unterstützten Seiten aus.
+
+## 🌍 Unterstützte Webseiten
+
+Diese Extension unterstützt aktuell die folgenden Immobilien-Webseiten:
+
+- **Immobilienscout24** (immobilienscout24.de)
+- **Immonet** (immonet.de)
+- **Immowelt** (immowelt.de)
+
+Weitere Seiten können bei Bedarf hinzugefügt werden.
+
+Hinweis:
+Die unterstützten Webseiten können sich ändern oder die HTML-Struktur der Seiten kann angepasst werden. Falls dies der Fall ist, könnte die Extension möglicherweise nicht mehr richtig funktionieren. In diesem Fall kann es erforderlich sein, den Parser für die jeweilige Seite anzupassen.
+
+Weitere Seiten können bei Bedarf hinzugefügt werden.
+
+---
+
+## 🛠️ Technische Details
+
+### 1. **Speicherung der Einstellungen**
+
+Die benutzerdefinierten Einstellungen (Preisgrenzen und Farben) werden in **`chrome.storage.sync`** gespeichert, sodass sie auch über verschiedene Browsersitzungen hinweg erhalten bleiben.
+
+### 2. **Dynamische Preisbereichskonfiguration**
+
+Die **Options-Seite** ermöglicht es dem Benutzer, beliebig viele Preisgrenzen und Farben hinzuzufügen und zu speichern.
+
+### 3. **Preisberechnung**
+
+Der Quadratmeterpreis wird auf der Basis des **Kaufpreises** und der **Wohnfläche** der Immobilien berechnet und in der UI angezeigt.
+
+---
 
 ## Attribution
 
