@@ -18,13 +18,13 @@ Diese Chrome Extension berechnet den **Preis pro Quadratmeter** (€/m²) auf Im
 1. Klone das Repository oder lade es herunter:
 
    ```bash
-   git clone https://github.com/lwendii/immopreis-rechner.git
+   git clone https://github.com/lwendii/ImmoPricePerM2.git
    ```
 
 2. Gehe in das Projektverzeichnis:
 
    ```bash
-   cd immopreis-rechner
+   cd ImmoPricePerM2
    ```
 
 3. Führe `node build.js` aus, um die Dateien zu bauen und in den `dist/`-Ordner zu kopieren:
@@ -39,7 +39,7 @@ Diese Chrome Extension berechnet den **Preis pro Quadratmeter** (€/m²) auf Im
 
 6. Klicke auf **"Entpackte Erweiterung laden"**.
 
-7. Wähle den Ordner aus, der die Extension-Dateien enthält (`immopreis-rechner`).
+7. Wähle den Ordner aus, der die Extension-Dateien enthält (`ImmoPricePerM2`).
 
 8. Die Extension ist jetzt aktiv und sollte auf unterstützten Webseiten den Quadratmeterpreis berechnen und anzeigen!
 
